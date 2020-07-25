@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  background-image: url('test1.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: lightgrey;
+  display: block;
+  transition: 0.3s;
+ 
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width:100%;
+}
+
+li {
+  float: left;
+  width:100%;
+}
+
+li a, .dropbtn {
+   width:100%
+  display: inline-block;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+  width: 100%;
+}
+
+li.dropdown {
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  width:100%
+  position: absolute;
+  background-color:  white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: right-side;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #CC3333;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.btn{
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+	margin-top:75px;
+}
+
+.btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn:active {
+    color: #000
+}
+
+.btn:active:after {
+    background: transparent;
+}
+
+.btn:hover:before {
+    opacity: 1;
+}
+
+.btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <ul>
+  <li> <a href="admin_home.html" class="Active"><i class="fa fa-fw fa-home"></i> Home</a></li>
+ <li><a href="#"><i class="	fa fa-dashboard"></i> Dashboard</a></li>
+ 			<li class="dropdown">
+			<a href="javascript:void(0)" class="dropbtn"><i class="	fa fa-institution"></i> Sitting room</a>
+			<div class="dropdown-content">
+			<a href="#"> &nbsp &nbsp &nbsp &nbsp Room number</a>
+			<a href="#"> &nbsp &nbsp &nbsp &nbsp Selective task</a> 
+			
+			</div>
+            <div>
+	<li class="dropdown">
+			<a href="javascript:void(0)" class="dropbtn"><i class="fa fa-group"></i>  Employees</a>
+			<div class="dropdown-content">
+			<a href="emp_adds2.html"> &nbsp &nbsp Add employee</a>
+			<a href="emp_del.html"> &nbsp &nbsp Delete employee</a>
+			<a href="#"> &nbsp &nbsp View list</a>
+			</div>	
+			
+			 <div>
+	<li class="dropdown">
+			<a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user"></i>  Agents</a>
+			<div class="dropdown-content">
+			<a href="add_a.html"> &nbsp &nbsp  Add agents</a>
+			<a href="ag_del.html"> &nbsp &nbsp  Delete agents</a>
+			<a href="#"> &nbsp &nbsp  View agent list</a>
+			</div>	
+			
+			<li class="dropdown">
+			<a href="javascript:void(0)" class="dropbtn"><i class="	fa fa-institution"></i> Department</a>
+			<div class="dropdown-content">
+			<a href="dept_add.html">&nbsp &nbsp  Add department</a>
+			<a href="#"> &nbsp &nbsp  View list</a> 
+			</div>
+						
+			<div>
+	<li class="dropdown">
+			<a href="javascript:void(0)" class="dropbtn"><i class="fa fa-folder"></i> Assignment</a>
+			<div class="dropdown-content">
+			<a href="#"> &nbsp &nbsp View tasks</a>
+			<a href="#">  &nbsp &nbsp Checked tasks</a>
+			</div>
+			
+			
+			
+			
+	<li><a href="notice.html"><i class="fa fa-envelope"></i> Notices</a></li>
+    <li><a  href="#"><i class="fa fa-gear fa-spin" ></i> Settings</a></li>
+	</ul>
+</div>
+</div>
+	<button class="btn" style="float:right" ><i class="fa fa-sign-out" style="font-size:20px"></i> Log Out</button>
+<div id="main">
+  <center><b><u><font color="red"  face="Vendana" size="20">  SYNTAX COMPANY</b></u></center>
+  
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+   
+</body>
+</html> 

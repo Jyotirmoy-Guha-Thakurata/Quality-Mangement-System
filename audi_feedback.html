@@ -1,0 +1,68 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="om.css">
+	
+	<script type="text/javascript">
+        function validate_form() {
+            if (document.feedback_ag.aid.value == "") {
+                alert("Please fill in the 'Your Auditor Id' box.");
+                return false;
+            }
+             
+ 
+ 
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.feedback_ag.email_id.value)) {
+                alert("You have entered an invalid email address!")
+                return false;
+            }
+			alert("sucessfully Submitted");
+        }
+	</script>
+	</head>
+		
+	<body>
+	<center>
+	<form name="feedback_ag" method="post"  action="auditor_home.html"onsubmit="return validate_form();">
+	<h1>Feedback FORM</h1>
+	<table border=2>
+	<tr>
+	<td colspan=2><center><h3>Please fill the feedback form</h3></center></td>
+	</tr>
+	<tr>
+	<td >Auditor Id:<span style="color:red">*</span></td>
+	<td ><input type="text" name="aid" id="aid"></td> 
+	</tr>
+	<tr>
+	<td>How do you rate your Test?<span style="color:red">*</span></td>
+	<td >
+				
+				<input name="Company" type="radio" value="bad"  /> BAD
+				<input name="Company" type="radio" value="average" /> AVERAGE
+				<input name="Company" type="radio" value="good" /> GOOD
+				</td>
+	</td>
+	</tr>
+	<tr>
+	<td >Comments<span style="color:red">*</span></td>
+	<td >
+		<textarea rows="4" maxlen="200" name="S2" cols="20" required></textarea></td> 
+	</tr>
+	 <tr>
+                <td align="left" valign="top" width="41%">Email<span style="color:red">*</span></td>
+                <td width="57%">
+                    <input type="text" id="email_id" name="email_id" size="24"></td>
+            </tr>
+	<div class="login-box">
+	<tr>
+	<td colspan=2>
+	<p align="center">
+	<input type="submit" value="submit" name="B1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="reset" value="Reset all" name="B2">
+	</td>
+	</tr>
+	</div>
+	</table>
+	</form>
+	</center>
+	</body>
+</html>

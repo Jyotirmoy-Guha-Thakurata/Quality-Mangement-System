@@ -1,0 +1,68 @@
+<html>
+	<head>
+	<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  background-image: url('hr-blog-2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+	</head>
+	<body>
+	<form name="department" action="admin_home.html" method="post">
+	<center>
+	 <table align="center" width=40% width="100%" cellspacing="2" cellpadding="2" border="5">
+            <tr>
+                <td colspan="2" align="center"><b>Department Enlisting Form.</b></td>
+ 
+            </tr>
+	<tr>
+	<td align="left" valign="top" width="41%">Department Number<span style="color:red">*</span></td>
+                <td width="57%">
+                    <input type="text" id="num" name="num" size="24" required></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%">Department Name<span style="color:red">*</span></td>
+                <td width="57%">
+                    <input type="text" id="dname" name="dname " size="24" required></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%">Head of the Department<span style="color:red">*</span></td>
+                <td width="57%">
+                    <input type="text" id="hod" name="hod" size="24" required></td>
+	</tr>
+	<tr>
+	<td align="left" valign="top" width="41%">Room Number<span style="color:red">*</span></td>
+                <td width="57%">
+                    <input type="text" id="roomno" name="roomno" size="24" required></td>
+	</tr>
+	
+	<tr>
+                <td align="left" valign="top" width="41%">Departmert Location</td>
+                <td width="57%"><select name="mydropdown">
+<option value="Default">Default</option>
+<option value="Chennai">Chennai</option>
+<option value="Bangalore">Bangalore</option>
+<option value="Chennai">Pune</option>
+<option value="Bangalore">Mysore</option>
+<option value="Chennai">Chandigarh</option>
+ 
+</select></td>
+ 
+ 
+            </tr>
+			
+	<tr>
+                <td colspan="2">
+                    <p align="center">
+                        <input type="submit" value="  Submit" name="B4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="  Reset All   " name="B5"></td>
+            </tr>
+	</table>
+	</center>
+	</form>
+	</body>
+</html>

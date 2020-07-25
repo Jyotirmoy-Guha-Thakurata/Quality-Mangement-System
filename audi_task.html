@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <script type="text/javascript">
+       
+        function validate_form() {
+        alert("UPLOADED SUCCESSFULLY")
+            }
+    function myFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "file");
+  document.body.appendChild(x);
+}
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+
+  background-image: url('test1.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+
+<body>
+<center>
+    <h1>UPLOAD TASKS</h1>
+    <form name="task" action="auditor_home.html" onsubmit="return validate_form();" method="post" enctype="multipart/form-data">
+<table border="2">
+     <tr>
+  <td>Employee id<span style="color:red">*</span></td>
+  <td>
+  <input type="text" id="aid" name="aid" size="24" required></td></tr>
+  
+  <tr>
+	 <td>Assignment id<span style="color:red">*</span></td>
+  <td>
+  <input type="date" id="ass_date" name="ass_date" size="24" readonly></td></tr>
+  
+  <tr>
+  <td>Assignment date<span style="color:red">*</span></td>
+  <td>
+  <input type="date" id="ass_date" name="ass_date" size="24" readonly></td></tr>
+  <tr>
+  <td>Assignment type<span style="color:red">*</span></td>
+  <td>
+                    <input type="text" id="ass_type" name="ass_type" size="24" readonly></td>
+  </tr>
+  <tr>
+  <td>Assignment Questions<span style="color:red">*</span></td>
+ 
+                    <td><a href="downloads.php?file_id=<?php echo $file['id'] ?>"><i class="fa fa-download"></i>Download</a></td>
+  </tr>
+  <tr>
+  <td>Assignment upload<span style="color:red">*</span></td>
+   <td>              
+   <input type="file" name="fileToUpload" id="fileToUpload" accept="application/pdf, application/vnd.ms-word">
+  </tr>
+ <tr>
+                <td colspan="2">
+                    <p align="center">
+                        <input type="submit" value="  UPLOAD" name="B4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="  Reset All   " name="B5"></td>
+            </tr>
+  </table>
+</form>
+</center>
+</body>
+</head>
+</html>

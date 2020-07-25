@@ -1,0 +1,15 @@
+body
+{
+margin: 0;
+padding: 0;
+background: url(directly-above-shot-of-digital-tablet-with-pen-and-royalty-free-image-919917888-1544710552.jpg);
+background-size: cover;
+background-position: center;
+font-family: sans-serif;
+}
+.login-box input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #39dc79;
+	color:#000;
+}

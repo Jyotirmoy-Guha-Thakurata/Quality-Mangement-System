@@ -1,0 +1,60 @@
+<html>
+	<head>
+	<script type="text/javascript">
+        function validate_form() {
+           
+            if (document.agent.num.value == "") {
+                alert("Enter Employee Number");
+                return false;
+            }
+            alert("sucessfully Submitted");
+ 
+ 
+ 
+           
+        }
+ 
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57)) {
+                alert("Enter Number");
+                return false;
+            }
+            return true;
+        }
+ 
+ 
+        //-->
+    </script>
+	</head>
+	<body bgcolor="cyan">
+	<center>
+	<h1>Update Agent Table</h1>
+	<hr>
+	 <form name="agent" action="" onsubmit="return validate_form();" method="post">
+	<table border= 2>
+	<tr>
+	<td>Agent id: <span style="color:red">*</span></td>
+	
+	 <td width="57%">
+                    <input type="text" id="num" name="num" onkeypress="return isNumberKey(event)" size="24"></td>
+	</tr>
+	
+	
+				
+	 <tr>
+	 
+                <td colspan="3">
+                    <p align="center">
+                        <button onclick="window.location.href = 'agent_update.html';">UPDATE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button onclick="window.location.href = 'agent_delete.html';">DELETE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <button onclick="window.location.href = 'agent_search.html';">SEARCH</button>
+						</td>
+            </tr>
+			
+	</table>
+	</form>
+	</center>
+	</body>
+</html>

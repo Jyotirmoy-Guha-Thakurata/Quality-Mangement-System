@@ -1,0 +1,53 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="shiv.css">
+	<script type="text/javascript">
+		function validate_form() {
+        alert("UPLOADED SUCCESSFULLY")
+            }
+	</script>
+		</head>
+	<body bgcolor="yellow">
+	<center>
+	<h1>NOTICE UPLOAD</h1>
+	<form name="notice" method="post"  action="admin_home.html" onsubmit="return validate_form();">
+	<table border="2">
+	<tr>
+	<td>
+	Department name:<span style="color:red">*</span>
+	</td>
+	<td>
+	<input type="text" id="dname" name="dname " required>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>
+	Notice subject:
+	</td>
+	<td>
+	<input type="text" id="notice_sub" name="notice_sub " required>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>
+	Notice:</td>
+	<td>
+	<textarea rows="4" maxlen="200" name="S2" cols="20"></textarea>
+	</td>
+	</tr>
+	<tr>
+	<td colspan=2>
+	<p align="center">
+	<p id="first">
+	<input type="submit" value="upload" name="B1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="reset" value="Reset all" name="B2"></p>
+	</td>
+	</tr>
+	</table>
+	</div>
+	</form>
+	</center>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head></head>
+	<body bgcolor="lightgreen">
+	<center>
+	<h1>Messages submission</h1>
+	<form name="amessage" method="post"  action="agent.html" onsubmit="return validate_form();">
+	<table border="2">
+	<tr>
+	<td>
+	Department name:<span style="color:red">*</span>
+	</td>
+	<td>
+	<input type="text" id="dname" name="dname " required>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	Agent id:<span style="color:red">*</span>
+	</td>
+	<td>
+	<input type="text" id="aid" name="aid" required>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	Department Messages:</td>
+	<td>
+	<textarea rows="4" maxlen="200" name="S2" cols="20"></textarea>
+	</td>
+	</tr>
+	<tr>
+	<td colspan=2>
+	<p align="center">
+	<input type="submit" value="submit" name="B1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="reset" value="Reset all" name="B2">
+	</td>
+	</tr>
+	</table>
+	</form>
+	</center>
+	</body>
+</html>

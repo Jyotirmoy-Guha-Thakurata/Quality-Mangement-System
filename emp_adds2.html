@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Enlisting</title>
+    <style type="text/css">
+        body {
+    font-size: 16px;
+    background-color: #b94646;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+     }
+   
+h2 {
+    text-align: center;
+   
+}
+form {
+    width: 900px;
+    background: goldenrod;
+    padding: 15px 40px 40px;
+    border: 1px solid grey;
+    margin: 50px auto 0;
+    border-radius: 10px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+textarea
+{
+    resize:none;
+}
+.row {
+    padding-bottom: 10px;
+}
+.form-inline {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 2px;
+}
+.form-inline label, .form-inline input {
+    display: inline-block;
+    width: auto;
+    padding-right: 15px;
+}
+.error {
+    color: red;
+    font-size: 90%;
+}
+input[type="submit"] {
+    font-size: 110%;
+    background: royalblue ;  
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;	
+}
+input[type="submit"]:hover {
+    background: #0165b6;
+}
+    </style>
+    <script type="text/javascript">
+
+       
+
+// Defining a function to validate form 
+function validateForm() 
+{
+    // Retrieving the values of form elements 
+     function printError(elemId, hintMsg) 
+   {
+     document.getElementById(elemId).innerHTML = hintMsg;
+   }
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+    var mobile = document.contactForm.mobile.value;
+    var country = document.contactForm.country.value;
+    var gender = document.contactForm.gender.value;
+    var address = document.contactForm.address.value;
+    var employeeno = document.contactForm.employeeno.value;
+    var designation = document.contactForm.designation.value;
+    var experience = document.contactForm.experience.value;
+    var fax = document.contactForm.fax.vlaue;
+    var salary = document.contactForm.salary.value;
+    // Defining error variables with a default value
+    var nameErr = emailErr = mobileErr = locErr = genderErr = addrErr = desigErr = faxErr = expErr = salErr = true;
+    
+    // Validate name
+    if(name == "") {
+        printError("nameErr", "Please enter the name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(name) === false) {
+            printError("nameErr", "Please enter a valid name");
+        } else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    } 
+    
+    // Validate email address
+    if(email == "") {
+        printError("emailErr", "Please enter the email address");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    //Validate Employee number
+
+    if(employeeno == ""){
+        printError("enoErr","Please enter the employee number");
+    } else {
+        var regex = /^[0-9]\d{1}[A-Z]{3}[0-9]\d{3}$/;
+        if(regex.test(employeeno) === false) {
+            printError("enoErr","Please enter a valid employee number");
+        } else{
+            printError("enoErr", "");
+            eno = false;
+        }
+    }
+
+            // Validate mobile number
+    if(mobile == "") {
+        printError("mobileErr", "Please enter the mobile number");
+    } else {
+        var regex = /^[1-9]\d{9}$/;
+        if(regex.test(mobile) === false) {
+            printError("mobileErr", "Please enter a valid 10 digit mobile number");
+        } else{
+            printError("mobileErr", "");
+            mobileErr = false;
+        }
+    }
+
+    //Validate Fax Number
+    if(fax == "") {
+        printError("faxErr" , "Please enter the fax number");
+    } else {
+          var regex = /^[+][0-9]\d{10}$/;
+        if(regex.test(fax) === false) {
+            printError("faxErr", "Please enter a valid fax number");
+        } else{
+            printError("faxErr", "");
+            faxErr = false;
+        }
+    }
+    
+    // Validate location
+    if(country == "Select") {
+        printError("locErr", "Please select the location");
+    } else {
+        printError("locErr", "");
+        countryErr = false;
+    }
+
+    //Validate designation
+     if(designation == "Select") {
+        printError("desigErr", "Please select the designation");
+    } else {
+        printError("desigErr", "");
+        desigErr = false;
+    }
+    
+    // Validate gender
+    if(gender == "") {
+        printError("genderErr", "Please select the gender");
+    } else {
+        printError("genderErr", "");
+        genderErr = false;
+    }
+    //Validate Job Experience
+    if(experience == ""){
+        printError("expErr","Please select the desired option");
+    } else {
+        printError("expErr","");
+        expErr = false;
+    }
+    //Validate Salary
+    if(salary == "") {
+        printError("salErr","Please enter the salary Amount");
+    } else {
+        var regex = /^[0-9]+(\,[0-9]{1,2})?$/;
+        if(regex.test(salary) === false) {
+            printError("salErr", "Please enter the valid amount");
+        } else{
+            printError("salErr", "");
+            salErr = false;
+        }
+    }
+
+
+    //Validate Address
+    if(address == "")
+    {
+        printError("addrErr", "Please enter The Address");
+    } else {
+        printError("addrErr", "");
+        addrErr = false;
+    }
+    
+    // Prevent the form from being submitted if there are any errors
+    if((nameErr || emailErr || mobileErr || locErr || genderErr || addrErr || faxErr || salErr) == true) {
+       return false;
+    } 
+};
+
+function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57)) {
+                alert("Enter Number");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form method="POST" action = "processing.php">
+<form name="contactForm" onsubmit="return validateForm()">
+    <h2>Employee Enlisting Form</h2>
+    
+    <div class="row">
+        <label>Employee Name</label>
+        <input type="text" name="name">
+        <div class="error" id="nameErr"></div>
+    </div>
+
+     <div class="row">
+        <label>Gender</label>
+        <div class="form-inline">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label> 
+        </div>
+        <div class="error" id="genderErr"></div>
+    </div>
+
+    <div class="row">
+        <label>Employee Number</label>
+        <input type="text" name="employeeno">
+        <div class="error" id="enoErr"></div>
+    </div>
+
+    <div class="row">
+        <label>Contact Number</label>
+        <input type="text" name="mobile" maxlength="10">
+        <div class="error" id="mobileErr"></div>
+    </div>
+
+    <div class="row">
+        <label>Email Address</label>
+        <input type="text" name="email">
+        <div class="error" id="emailErr"></div>
+    </div>
+
+      <div class="row">
+        <label>Residence Address</label>
+        <textarea rows="5" maxlen="200" cols="125" name="address"></textarea>
+        <div class="error" id="addrErr"></div>
+    </div>
+  
+    <div class="row">
+        <label>Job Location</label>
+        <select name="country">
+            <option>Select</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Pune</option>
+            <option>Mysore</option>
+            <option>Chandigarh</option>
+        </select> 
+        <div class="error" id="locErr"></div>
+    </div>
+
+        <div class="row">
+        <label>Designation</label>
+        <select name="designation">
+            <option>Select</option>
+            <option>System Engineer</option>
+            <option>Technical Analyst</option>
+            <option>Technical Team Leader</option>
+            <option>Project Manager</option>
+        </select> 
+        <div class="error" id="desigErr"></div>
+    </div>
+
+    <div class="row">
+        <label>Fax Number</label>
+        <input type="text" name="fax" onkeypress="return isNumberKey(event)" >
+        <div class="error" id="faxErr"></div>
+            </div>
+
+    
+
+    <div class="row">
+        <label>Job Experience</label>
+        <div class="form-inline">
+            <label><input type="radio" name="experience" value="Yes"> Yes</label>
+            <label><input type="radio" name="experience" value="No"> No</label> 
+        </div>
+        <div class="error" id="expErr"></div>
+    </div>
+          
+        </select> 
+
+  <div class="row">
+    <label>Date Of Joining</label>
+    <input type="Date" name="date">
+    <div class="error" id="dateerror"></div>
+  </div>
+
+<div class="row">
+    <label>Salary</label>
+    <input type="text" name="salary" onkeypress="return isNumberKey(event)">
+    <div class="error" id="salErr"></div>
+</div>
+
+    <div class="row">
+        <input type="submit" value="Submit" name="B4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="  Reset All   " name="B5">
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+	<head>
+	<script type="text/javascript">
+        function validate_form() {
+           
+            if (document.emp.num.value == "") {
+                alert("Enter Employee Number");
+                return false;
+            }
+            alert("sucessfully Submitted");
+ 
+ 
+ 
+           
+        }
+ 
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57)) {
+                alert("Enter Number");
+                return false;
+            }
+            return true;
+        }
+ 
+ 
+        //-->
+    </script>
+	</head>
+	<body bgcolor="cyan">
+	<center>
+	<h1>DELETE EMPLOYEE</h1>
+	<hr>
+	 <form name="emp" action="" onsubmit="return validate_form();" method="post">
+	<table border= 2>
+	<tr>
+	<td>Employee id: <span style="color:red">*</span></td>
+	
+	 <td width="57%">
+                    <input type="text" id="num" name="num" onkeypress="return isNumberKey(event)" size="24"></td>
+	</tr>
+	
+	<tr>
+	 
+                <td colspan="3">
+                    <p align="center">
+                        <button onclick="window.location.href = 'emp_update.html';">UPDATE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button onclick="window.location.href = 'emp_delete.html';">DELETE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <button onclick="window.location.href = 'emp_fetch.html';">SEARCH</button>
+						</td>
+            </tr>
+	</table>
+	</form>
+	</center>
+	</body>
+</html>
